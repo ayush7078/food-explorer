@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+Food Explorer
+Food Explorer is a web application built using React, ReactFlow, and TypeScript, which allows users to explore meal categories, meals within those categories, and details such as ingredients, tags, and instructions for each meal. The project fetches meal data from the free API provided by TheMealDB.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Demo
+You can check the live demo of the application on Netlify https://ayush-food-explorer.netlify.app/
 
-Currently, two official plugins are available:
+Features
+Explore different meal categories.
+View meals within a category.
+Fetch meal details, ingredients, and tags.
+Interactive graph-based visualization of meal categories and meals.
+Technologies Used
+React.js: Frontend library for building user interfaces.
+React Flow: Library for building node-based interfaces like flowcharts.
+TypeScript: Superset of JavaScript for type safety.
+Axios: Promise-based HTTP client for fetching API data.
+CSS: For styling the UI components.
+Installation
+Prerequisites
+Node.js and npm installed on your machine.
+Steps
+Clone the repository:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+git clone https://github.com/ayush7078/food-explorer.git
+cd food-explorer
+Install dependencies:
 
-## Expanding the ESLint configuration
+npm install
+Run the development server:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+npm start
+The app will run at http://localhost:3000/.
 
-- Configure the top-level `parserOptions` property like this:
+API
+This project utilizes the free TheMealDB API to fetch meal categories and meal details.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Categories Endpoint: https://www.themealdb.com/api/json/v1/1/categories.php
+Meals by Category Endpoint: https://www.themealdb.com/api/json/v1/1/filter.php?c={category}
+Meal Details Endpoint: https://www.themealdb.com/api/json/v1/1/lookup.php?i={mealId}
+Project Structure
+/src
+│
+├── App.tsx         # Main React component
+├── index.tsx       # Entry point of the app
+├── App.css         # Styles for the app
+Build and Deployment
+Building the App for Production
+To build the project for production:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+npm run build
+This will generate a build/ directory with all the necessary files to deploy.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Deploy to Netlify
+Connect your repository to Netlify.
+Set the Build command to npm run build.
+Set the Publish directory to build.
+Click "Deploy site" on Netlify, and your app will be live.
+Contributing
+Feel free to open issues or submit pull requests if you find any bugs or want to add new features.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgements
+TheMealDB for the free meal API.
+ReactFlow for the graph visualization.
